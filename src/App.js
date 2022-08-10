@@ -6,7 +6,7 @@ function App() {
   const [gramPictures, setGramPictures] = useState([]);
   const getPictures = () => {
     getInstaPosts(8).then((res) => {
-      res.data && setGramPictures(res.data.posts.data);
+      res.data && setGramPictures(res.data);
     });
   };
   useEffect(() => {
@@ -30,7 +30,7 @@ function App() {
                 <img
                   alt="gallery"
                   className=" w-full h-full rounded-md object-cover object-center"
-                  src={each.full_picture}
+                  src={each.media_url}
                 />
               </div>
             </div>
